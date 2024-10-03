@@ -6,32 +6,9 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:26:49 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/02 18:34:46 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/03 10:56:17 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-int	ft_isalldigit(const char *str)
-{
-	int	i;
-
-	i = 1;
-	if (!ft_isdigit(str[0]) && str[0] != '-')
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		if (!ft_isdigit(str[i]))
-			return (i);
-		i++;
-	}
-	return (i);
-}
 
 int	ft_atoi(const char *str)
 {
@@ -42,31 +19,33 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	result = 0;
-	isneg = 0;
+	isneg = 1;
 	max = "-2147483648";
 	if (str == max)
 		return (-2147483648);
-	if (str[0] == '-')
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
 	{
 		i++;
-		isneg = 1;
+		isneg = -1;
 	}
-	while (i < ft_isalldigit(str))
+	while (str[i])
 	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (result * isneg);
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	if (isneg)
-		return (result * -1);
-	return (result);
+	return (result * isneg);
 }
 
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 int	main(void)
 {
-	char *s = "34567";
+	char *s = "     34567";
 	char *s1 = "0";
 	char *s2 = "-567";
 	char *s3 = "-2147483648";
@@ -85,4 +64,4 @@ int	main(void)
 	printf("%i\n", ft_atoi(s5));
 	printf("%i\n", atoi(s5));
 	return (0);
-}
+}*/
