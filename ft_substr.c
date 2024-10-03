@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:32:30 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/03 13:26:08 by dvauthey         ###   ########.fr       */
+/*   Created: 2024/10/03 12:41:00 by dvauthey          #+#    #+#             */
+/*   Updated: 2024/10/03 14:07:04 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdlib.h>
-char	*ft_strdup(const char *s1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*s2;
-	int		i;
+	size_t	i;
+	char	*result;
 
 	i = 0;
-	while (s1[i])
+	while (s[i])
 		i++;
-	s2 = malloc((i + 1) * sizeof(char));
-	if (s2 == NULL)
+	result = malloc((i + 1) * sizeof(char));
+	if (result == NULL)
 		return (NULL);
 	i = 0;
-	while (s1[i])
+	while (i < len)
 	{
-		s2[i] = s1[i];
+		result[i] = s[start + i];
 		i++;
 	}
 	result[i] = '\0';
-	return (s2);
+	return (result);
 }
 
 /*
 #include <stdio.h>
-#include <string.h>
 int	main(void)
 {
-	const char *s1 = "Je sais pas";
-	const char *s2 = ft_strdup(s1);
-	const char *s3 = strdup(s1);
-	printf("1 : %s\n", s2);
-	printf("2 : %s\n", s3);
+	char const *s = "j'ai toujours pas d'inspi";
+	char *t;
+
+	t = ft_substr(s, 4, 4);
+	printf("%s\n", t);
 	return (0);
 }*/
