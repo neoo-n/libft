@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:04:31 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/03 15:44:54 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/04 11:08:06 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ int	ft_nb_row(char const *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		if (s[i - 1] == c && s[i])
+		if (s[i - 1] == c)
 			count++;
 		i++;
 	}
+	count++;
 	return (count);
 }
 
@@ -63,25 +64,24 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c && s[i + 1])
 		{
-			printf("i : %i\n", i);
 			start = i;
 			while (s[i] != c && s[i])
 				i++;
-			printf("i encore : %i\n", i);
 			result[j] = ft_strinrow(s, start, i);
 			j++;
 		}
 		i++;
 	}
-	result[j + 1] = NULL;
+	result[j] = NULL;
 	return (result);
 }
 
+/*
 int	main(void)
 {
-	const char *s = "Je ne sais pas";
-	char **tab = ft_split(s, ' ');
-	for (int i = 0; i < 4; i++)
+	const char *s = "..	.  Je.  ne . sais ..    pas  .  ...";
+	char **tab = ft_split(s, '.');
+	for (int i = 0; i < 6; i++)
 		printf("%s\n", tab[i]);
 	return (0);
-}
+}*/
