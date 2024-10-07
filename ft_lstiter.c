@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 16:07:00 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/07 14:33:37 by dvauthey         ###   ########.fr       */
+/*   Created: 2024/10/07 14:33:53 by dvauthey          #+#    #+#             */
+/*   Updated: 2024/10/07 14:57:33 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-t_list	*ft_lstnew(void *content)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*res;
+	int	i;
+	int	size_lst;
 
-	res = malloc(sizeof(t_list *));
-	if (res == NULL)
-		return (NULL);
-	res->content = content;
-	res->next = NULL;
-	return (res);
+	i = 0;
+	if (lst == NULL || f == NULL)
+		return;
+	size_lst = ft_lstsize(lst);
+	while (i < size_lst)
+	{
+		f(lst->content);
+		lst = lst.next;
+		i++;
+	}
 }
