@@ -1,37 +1,41 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 16:58:49 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/07 23:40:15 by marvin           ###   ########.fr       */
+/*   Created: 2024/10/08 13:30:41 by dvauthey          #+#    #+#             */
+/*   Updated: 2024/10/08 13:50:44 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t				i;
 	unsigned char		*tempdst;
 	const unsigned char	*tempsrc;
-	unsigned char		temp[len + 1];
 
 	i = 0;
 	tempdst = dst;
 	tempsrc = src;
-	while (i < len)
+	if (tempsrc < tempdst && tempsrc + len > tempdst)
 	{
-		temp[i] = tempsrc[i];
-		i++;
+		while (len > 0)
+		{
+			tempdst[len - 1] = tempsrc[len - 1];
+			len--;
+		}	
 	}
-	i = 0;
-	while (i < len)
+	else if (tempdst != tempsrc && n > 0)
 	{
-		tempdst[i] = temp[i];
-		i++;
+		while (i < len)
+		{
+			tempdst[i] = tempsrc[i];
+			i++;
+		}
 	}
-	tempdst[i] = '\0';
 	return (dst);
 }

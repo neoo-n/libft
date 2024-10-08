@@ -1,16 +1,17 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 14:04:31 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/07 23:41:09 by marvin           ###   ########.fr       */
+/*   Created: 2024/10/08 13:52:57 by dvauthey          #+#    #+#             */
+/*   Updated: 2024/10/08 13:53:32 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
+
 static int	ft_nb_row(char const *s, char c)
 {
 	int	i;
@@ -34,7 +35,7 @@ static char	*ft_strinrow(char const *s, int start, int end)
 	int		i;
 
 	i = 0;
-	row = malloc((end - start + 1) *sizeof(char));
+	row = malloc((end - start + 1) * sizeof(char));
 	if (row == NULL)
 		return (NULL);
 	while (i < (end - start))

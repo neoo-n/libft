@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:33:53 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/07 14:57:33 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:26:25 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 
 	i = 0;
 	if (lst == NULL || f == NULL)
-		return;
+		return ;
 	size_lst = ft_lstsize(lst);
 	while (i < size_lst)
 	{

@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:48:55 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/07 14:33:26 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:25:10 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,7 +14,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst == NULL || new == NULL)
-		return;
+		return ;
 	new->next = *lst;
 	lst = &new;
 }

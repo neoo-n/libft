@@ -14,7 +14,7 @@ OBJS = ${SRCS:.c=.o}
 
 NAME = libft.a
 
-RM = 
+RM = rm -f
 
 AR = ar rcs
 
