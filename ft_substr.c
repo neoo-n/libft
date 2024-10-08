@@ -10,7 +10,7 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <libft.h>
+#include "libft.h"
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
@@ -31,15 +31,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	result[i] = '\0';
 	return (result);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char const *s = "j'ai toujours pas d'inspi";
-	char *t;
-
-	t = ft_substr(s, 4, 4);
-	printf("%s\n", t);
-	return (0);
-}*/

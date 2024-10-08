@@ -10,8 +10,8 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <libft.h>
-int	ft_nb_row(char const *s, char c)
+#include "libft.h"
+static int	ft_nb_row(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -28,7 +28,7 @@ int	ft_nb_row(char const *s, char c)
 	return (count);
 }
 
-char	*ft_strinrow(char const *s, int start, int end)
+static char	*ft_strinrow(char const *s, int start, int end)
 {
 	char	*row;
 	int		i;
@@ -74,13 +74,3 @@ char	**ft_split(char const *s, char c)
 	result[j] = NULL;
 	return (result);
 }
-
-/*
-int	main(void)
-{
-	const char *s = "..	.  Je.  ne . sais ..    pas  .  ...";
-	char **tab = ft_split(s, '.');
-	for (int i = 0; i < 6; i++)
-		printf("%s\n", tab[i]);
-	return (0);
-}*/

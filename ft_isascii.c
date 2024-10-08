@@ -16,17 +16,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%i\n", ft_isascii(12));
-	printf("%i\n", ft_isascii(-12));
-	printf("%i\n", ft_isascii(127));
-	printf("%i\n", ft_isascii(0));
-	printf("%i\n", ft_isascii(128));
-	printf("%i\n", ft_isascii(134));
-	printf("%i\n", ft_isascii(17));
-	return (0);
-}*/

@@ -16,16 +16,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%i\n", ft_isprint(' '));
-	printf("%i\n", ft_isprint('r'));
-	printf("%i\n", ft_isprint('<'));
-	printf("%i\n", ft_isprint(128));
-	printf("%i\n", ft_isprint(127));
-	printf("%i\n", ft_isprint(-6));
-	return (0);
-}*/

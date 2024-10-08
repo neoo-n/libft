@@ -10,9 +10,9 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <libft.h>
+#include "libft.h"
 
-int	ft_nb_digit(int *n, int *isneg)
+static int	ft_nb_digit(int *n, int *isneg)
 {
 	int	count;
 	int	temp;
@@ -61,12 +61,4 @@ char	*ft_itoa(int n)
 	if (isneg == -1)
 		result[0] = '-';
 	return (result);
-}
-
-
-int	main(void)
-{
-	int n = 0;
-	printf("%s\n", ft_itoa(n));
-	return (0);
 }

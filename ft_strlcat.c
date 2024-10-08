@@ -10,7 +10,7 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <libft.h>
+#include "libft.h"
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	int		lensrc;
@@ -33,17 +33,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[lendst + i] = '\0';
 	return (lendst + lensrc);
-}
-
-int	main(void)
-{
-	char *s1 = "moi helppppp";
-	char *s2 = "moi helppppp";
-	char d1[16] = "sauvez ";
-	char d2[16] = "sauvez ";
-	printf("%zu\n", ft_strlcat(d1, s1, 3));
-	printf("%s\n", d1);
-	printf("%lu\n", strlcat(d2, s2, 3));
-	printf("%s\n", d2);
-	return (0);
 }

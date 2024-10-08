@@ -16,17 +16,3 @@ int	ft_isalpha(int	c)
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%i\n", ft_isalpha('a'));
-	printf("%i\n", ft_isalpha('z'));
-	printf("%i\n", ft_isalpha('A'));
-	printf("%i\n", ft_isalpha('Z'));
-	printf("%i\n", ft_isalpha('h'));
-	printf("%i\n", ft_isalpha('7'));
-	printf("%i\n", ft_isalpha(134));
-	return (0);
-}*/

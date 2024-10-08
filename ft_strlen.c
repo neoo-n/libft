@@ -10,7 +10,7 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <libft.h>
+#include "libft.h"
 size_t ft_strlen(const char *s)
 {
 	int	i;
@@ -20,15 +20,3 @@ size_t ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%zu\n", ft_strlen("sdfgahujsfn"));
-	printf("%lu\n", strlen("sdffn"));
-	printf("%zu\n", ft_strlen("sdfgsfn"));
-	printf("%zu\n", ft_strlen("s"));
-	printf("%zu\n", ft_strlen(""));
-	return (0);
-}*/

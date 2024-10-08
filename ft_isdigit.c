@@ -16,13 +16,3 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%i\n", ft_isdigit('0'));
-	printf("%i\n", ft_isdigit(194));
-	printf("%i\n", ft_isdigit('g'));
-	printf("%i\n", ft_isdigit('4'));
-	return (0);
-}*/

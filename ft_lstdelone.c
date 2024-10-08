@@ -9,8 +9,7 @@
 /*   Updated: 2024/10/07 21:06:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
-
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

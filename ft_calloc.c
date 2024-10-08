@@ -10,7 +10,7 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <libft.h>
+#include "libft.h"
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	i;
@@ -27,21 +27,3 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return ((void *) tab);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	int	*t;
-	int *t2;
-	size_t count = 4;
-	size_t size = 3;
-	t = (int *) ft_calloc(count, size);
-	t2 = (int *) calloc(count, size);
-	for (size_t i = 0; i < count; i++)
-	{
-		printf("t %zu: %d\n", i, t[i]); 
-		printf("t2 %zu: %d\n", i, t2[i]);
-	}	
-	return (0);
-}*/

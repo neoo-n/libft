@@ -39,29 +39,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * isneg);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(void)
-{
-	char *s = "     34567";
-	char *s1 = "0";
-	char *s2 = "-1fjsd567";
-	char *s3 = "-2147483648";
-	char *s4 = "21474836447";
-	char *s5 = "214748a6447";
-	printf("%i\n", ft_atoi(s));
-	printf("%i\n", atoi(s));
-	printf("%i\n", ft_atoi(s1));
-	printf("%i\n", atoi(s1));
-	printf("%i\n", ft_atoi(s2));
-	printf("%i\n", atoi(s2));
-	printf("%i\n", ft_atoi(s3));
-	printf("%i\n", atoi(s3));
-	printf("%i\n", ft_atoi(s4));
-	printf("%i\n", atoi(s4));
-	printf("%i\n", ft_atoi(s5));
-	printf("%i\n", atoi(s5));
-	return (0);
-}*/

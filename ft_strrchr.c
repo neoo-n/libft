@@ -25,16 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
-
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-	char *s = "Je ne sais pas travailler";
-	int c = 'e';
-	int c1 = 'e';
-	printf("%s\n", ft_strrchr(s, c));	
-	printf("%s\n", strrchr(s, c1));	
-	return (0);
-}

@@ -17,16 +17,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%i\n", ft_isalnum('4'));
-	printf("%i\n", ft_isalnum('A'));
-	printf("%i\n", ft_isalnum('z'));
-	printf("%i\n", ft_isalnum('9'));
-	printf("%i\n", ft_isalnum('.'));
-	printf("%i\n", ft_isalnum('/'));
-	printf("%i\n", ft_isalnum('3'));
-	return (0);
-}*/

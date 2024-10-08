@@ -10,14 +10,7 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <libft.h>
-int	ft_strlen(char const *s);
-
-/*
-char	f(unsigned int i, char c)
-{
-	return (c + i);
-}*/
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -36,12 +29,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char const *s = "abcdefg";
-	printf("%s\n", ft_strmapi(s, f));
-	return (0);
-}*/
