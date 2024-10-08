@@ -6,11 +6,11 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:13:30 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/08 13:16:30 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:17:54 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_ismin(const char *str)
+static int	ft_ismin(const char *str)
 {
 	char	*max;
 
@@ -18,7 +18,7 @@ int	ft_ismin(const char *str)
 	if (str == max)
 		return (1);
 	return (0);
-}	
+}
 
 int	ft_atoi(const char *str)
 {
@@ -33,15 +33,14 @@ int	ft_atoi(const char *str)
 		return (-2147483648);
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
+		if (str[i] == '-')
+			isneg = -1;
 		i++;
-		isneg = -1;
-	}
-	while (str[i])
+	}	
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (result * isneg);
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:30:41 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/08 13:50:44 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/08 14:56:21 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			len--;
 		}	
 	}
-	else if (tempdst != tempsrc && n > 0)
+	else if (tempdst != tempsrc && len > 0)
 	{
 		while (i < len)
 		{
