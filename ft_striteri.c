@@ -17,9 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		printf("i : %i\n", i);
 		f(i, &s[i]);
-		printf("ssss : %c\n\n", s[i]);
 		i++;
 	}
 }
