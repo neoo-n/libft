@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:52:57 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/08 13:53:32 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/09 16:50:20 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,31 @@ static int	ft_nb_row(char const *s, char c)
 	int	i;
 	int	count;
 
-	i = 1;
+	i = 0;
 	count = 0;
 	while (s[i])
 	{
-		if (s[i - 1] == c)
+		if (s[i] != c)
+		{
 			count++;
-		i++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+		while (s[i] == c && s[i])
+			i++;
 	}
-	count++;
 	return (count);
 }
+
+static int	ft_nb(const char *s, char c, int i, int *start)
+{
+	while (s[i] == c && s[i])
+		i++;
+	*start = i;
+	while (s[i] != c && s[i])
+		i++;
+	return (i);
+}	
 
 static char	*ft_strinrow(char const *s, int start, int end)
 {
@@ -62,15 +76,14 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[i])
 	{
-		if (s[i] != c && s[i + 1])
+		i = ft_nb(s, c, i, &start);
+		if (start != i)
 		{
-			start = i;
-			while (s[i] != c && s[i])
-				i++;
 			result[j] = ft_strinrow(s, start, i);
+			if (!result[j])
+				return (NULL);
 			j++;
 		}
-		i++;
 	}
 	result[j] = NULL;
 	return (result);

@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:22:38 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/08 13:24:40 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:06:51 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,18 @@ char	*ft_itoa(int n)
 	int		isneg;
 
 	isneg = 1;
-	if (n == 0)
-		return ("0");
-	if (n == -2147483648)
-		return ("-2147483648");
 	nb_digit = ft_nb_digit(&n, &isneg);
 	result = malloc((nb_digit + 1) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
 	result[nb_digit] = '\0';
+	if (n == 0)
+	{
+		result[0] = '0'; 
+		return (result);
+	}
+	if (n == -2147483648)
+		return ("-2147483648");
 	nb_digit--;
 	while (n > 0)
 	{
