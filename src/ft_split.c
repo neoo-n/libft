@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:52:57 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/10/09 16:50:20 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:27:10 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,20 @@ static char	*ft_strinrow(char const *s, int start, int end)
 	return (row);
 }
 
+static void	*ft_freesplit(char **res, int j)
+{
+	int	i;
+
+	i = 0;
+	while (i <= j)
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -81,7 +95,7 @@ char	**ft_split(char const *s, char c)
 		{
 			result[j] = ft_strinrow(s, start, i);
 			if (!result[j])
-				return (NULL);
+				return (ft_freesplit(result, j));
 			j++;
 		}
 	}
