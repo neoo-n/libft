@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:53:48 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/11/08 11:19:03 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:19:44 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ typedef struct s_count
 	int	count;
 	int	error;
 }		t_count;
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -73,6 +77,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
 int		ft_printf(const char *s, ...);
 int		nb_of_nb(unsigned long n, int base);
 int		ft_power(unsigned long n, int power);
@@ -83,4 +88,11 @@ int		print_int(int n);
 int		print_u(unsigned int n);
 int		print_xlow(unsigned int n);
 int		print_xup(unsigned int n);
+
+char	*get_next_line(int fd);
+void	*get_ft_calloc(size_t count, size_t size);
+int		is_n(char *s);
+char	*temp_stash(char *stash, char *temp, int j, int until_n);
+int		get_ft_strlen(char *s);
+char	*get_ft_strjoin(char *s1, char *s2);
 #endif

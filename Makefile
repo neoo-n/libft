@@ -1,5 +1,4 @@
 CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = $(addprefix src/, ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
@@ -10,28 +9,27 @@ SRCS = $(addprefix src/, ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalph
 		ft_lstnew_bonus.c ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c\
 	   	ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstdelone_bonus.c\
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c\
-		ft_printf.c ftprintf_fctarg1.c ftprintf_fctarg2.c)
-
-OBJS = ${SRCS:.c=.o}
-
+		ft_printf.c ftprintf_fctarg1.c ftprintf_fctarg2.c\
+		get_next_line_bonus.c get_next_line_utils_bonus.c)
+OBJDIR = obj
+OBJS =  ${SRCS:src/%.c=${OBJDIR}/%.o}
 NAME = libft.a
-
 RM = rm -f
-
 AR = ar rcs
-
-
 
 all : ${NAME}
 
 ${NAME} : ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
-%.o : %.c 
-	${CC} ${CFLAGS} -c $<
+${OBJDIR}/%.o : src/%.c | ${OBJDIR}
+	${CC} ${CFLAGS} -c $< -o $@
 
-flean :
-	${RM} ${OBJS}
+${OBJDIR}:
+	mkdir -p ${OBJDIR}
+
+clean :
+	${RM} -rf ${OBJDIR}
 
 fclean : 	clean
 	${RM} ${NAME}

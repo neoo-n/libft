@@ -6,11 +6,11 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:53:09 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/11/08 11:13:08 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:06:51 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	print_c(int c)
 {

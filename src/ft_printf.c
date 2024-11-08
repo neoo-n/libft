@@ -6,11 +6,11 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:55:33 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/11/08 11:14:45 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:05:54 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	which_type(va_list args, const char *s, int i)
 {

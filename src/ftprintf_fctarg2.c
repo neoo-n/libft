@@ -6,11 +6,11 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:37:07 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/11/08 11:11:05 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:07:08 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	print_u(unsigned int n)
 {
