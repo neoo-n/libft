@@ -6,7 +6,7 @@
 /*   By: dvauthey <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:55:33 by dvauthey          #+#    #+#             */
-/*   Updated: 2024/11/08 14:05:54 by dvauthey         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:05:41 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int	ft_printf(const char *s, ...)
 		ac.count += ac.error;
 		(ac.i)++;
 	}
+	va_end(args);
 	return (ac.count);
 }
